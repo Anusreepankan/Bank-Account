@@ -26,11 +26,18 @@
                         placeholder="Enter your Account number" />
                       
                     </div>
-  
+                    <!-- account validation -->
+                    <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="mt-1 text-danger">
+                      Invalid Account Number
+                    </div>
+                    <br>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example22">Password</label>
                       <input formControlName="pswd" name="pswd" type="password" id="form2Example22" class="form-control" placeholder="Enter your password">
                       
+                    </div>
+                    <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" class="mt-2 text-danger">
+                      Invalid Password
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
@@ -62,3 +69,4 @@
       </div>
     </div>
   </section>
+  
